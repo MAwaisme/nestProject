@@ -7,7 +7,7 @@ export class AuthController {
 
     @Post('signup')
     signup(@Req() req: Request){
-        console.log("req.body testing......>>>>>>>>>>>>>>>>>>>>>======", req.body);
+        console.log("req.body testing......>>>>>>>>>======", req.body);
         
         return this.authServices.signup();
     }
