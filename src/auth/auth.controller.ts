@@ -8,7 +8,7 @@ export class AuthController {
 
     @Post('signup')
     signup(@Body() dto: AuthDto){
-        console.log("req.body testing......>>>>>>>>>======", dto);
+        // console.log("req.body testing......>>>>>>>>>======", dto);
         
         return this.authServices.signup(dto);
     }

@@ -1,13 +1,14 @@
 import { Controller, Get, UseGuards, Req } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
+import { Request } from 'express';
+import { JwtGuard } from 'src/auth/guard';
 
 @Controller('users')
-export class UserController {
-    @UseGuards(AuthGuard('jwt'))
-
+export class UsersController {
+    @UseGuards(JwtGuard)
     @Get('me')
-    getMe(@Req() req: any) {
-        console.log("asdasda", req.user);
-        return req.user;
+
+    getProfile(@Req() req: Request) {
+        return req.user; // typed correctly now
     }
 }

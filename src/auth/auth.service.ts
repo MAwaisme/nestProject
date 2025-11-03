@@ -73,7 +73,8 @@ export class AuthService {
             sub: userId,
             email
         }
-        const secret = this.config.get('DATABASE_URL');
+        const secret = this.config.get('JWT_SECRET');
+        console.log("Get secret JWT>>>>>>>===", secret);
 
         const token = await this.jwt.signAsync(payload, {
             expiresIn: '15m',
